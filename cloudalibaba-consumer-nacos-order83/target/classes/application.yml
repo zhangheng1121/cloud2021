@@ -1,0 +1,17 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 选择其中一个命名空间，不写默认是 public
+        # namespace: "dd285d79-3b8d-4d20-82d7-c99242608be4"
+
+# 消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者)
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
